@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import ConsumerList from './components/ConsumerList';
 import AddConsumer from './components/AddConsumer';
 import EditConsumer from './components/EditConsumer';
 import Header from './components/Header'; // optional nav bar
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
       <Header />
       <div className="p-4">
         <Routes>
-        <Route path="/" element={<Home key={window.location.pathname} />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/add" element={<AddConsumer />} />
           <Route path="/edit/:id" element={<EditConsumer />} />
         </Routes>
